@@ -1,0 +1,289 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D8EEF3B91577924D003FEB5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8EEF3B81577924D003FEB5E /* Foundation.framework */; };
+		D8EEF3BF1577924D003FEB5E /* Glob3iOSSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EEF3BE1577924D003FEB5E /* Glob3iOSSDK.m */; };
+		D8EEF3D31577979E003FEB5E /* G3Widget.h in Headers */ = {isa = PBXBuildFile; fileRef = D8EEF3D21577979E003FEB5E /* G3Widget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8EEF4021577A656003FEB5E /* ES1Renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = D8EEF3FB1577A656003FEB5E /* ES1Renderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8EEF4031577A656003FEB5E /* ES1Renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8EEF3FC1577A656003FEB5E /* ES1Renderer.mm */; };
+		D8EEF4041577A656003FEB5E /* ES2Renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = D8EEF3FD1577A656003FEB5E /* ES2Renderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8EEF4051577A656003FEB5E /* ES2Renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8EEF3FE1577A656003FEB5E /* ES2Renderer.mm */; };
+		D8EEF4061577A656003FEB5E /* ESRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = D8EEF3FF1577A656003FEB5E /* ESRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8EEF4071577A656003FEB5E /* Glob3.h in Headers */ = {isa = PBXBuildFile; fileRef = D8EEF4001577A656003FEB5E /* Glob3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8EEF4081577A656003FEB5E /* Glob3.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8EEF4011577A656003FEB5E /* Glob3.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D8EEF3B51577924D003FEB5E /* libG3MiOSSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libG3MiOSSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8EEF3B81577924D003FEB5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D8EEF3BC1577924D003FEB5E /* G3MiOSSDK-Prefix.pch */ = {isa = PBXFileReference; path = "G3MiOSSDK-Prefix.pch"; sourceTree = "<group>"; };
+		D8EEF3BD1577924D003FEB5E /* Glob3iOSSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Glob3iOSSDK.h; sourceTree = "<group>"; };
+		D8EEF3BE1577924D003FEB5E /* Glob3iOSSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Glob3iOSSDK.m; sourceTree = "<group>"; };
+		D8EEF3D21577979E003FEB5E /* G3Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = G3Widget.h; sourceTree = "<group>"; };
+		D8EEF3FB1577A656003FEB5E /* ES1Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES1Renderer.h; sourceTree = "<group>"; };
+		D8EEF3FC1577A656003FEB5E /* ES1Renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ES1Renderer.mm; sourceTree = "<group>"; };
+		D8EEF3FD1577A656003FEB5E /* ES2Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES2Renderer.h; sourceTree = "<group>"; };
+		D8EEF3FE1577A656003FEB5E /* ES2Renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ES2Renderer.mm; sourceTree = "<group>"; };
+		D8EEF3FF1577A656003FEB5E /* ESRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRenderer.h; sourceTree = "<group>"; };
+		D8EEF4001577A656003FEB5E /* Glob3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Glob3.h; sourceTree = "<group>"; };
+		D8EEF4011577A656003FEB5E /* Glob3.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Glob3.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8EEF3B21577924D003FEB5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EEF3B91577924D003FEB5E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8EEF3AA1577924D003FEB5E = {
+			isa = PBXGroup;
+			children = (
+				D8EEF3F81577A629003FEB5E /* Specific */,
+				D8EEF3D21577979E003FEB5E /* G3Widget.h */,
+				D8EEF3BA1577924D003FEB5E /* G3MiOSSDK */,
+				D8EEF3B71577924D003FEB5E /* Frameworks */,
+				D8EEF3B61577924D003FEB5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8EEF3B61577924D003FEB5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8EEF3B51577924D003FEB5E /* libG3MiOSSDK.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8EEF3B71577924D003FEB5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8EEF3B81577924D003FEB5E /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8EEF3BA1577924D003FEB5E /* G3MiOSSDK */ = {
+			isa = PBXGroup;
+			children = (
+				D8EEF3BD1577924D003FEB5E /* Glob3iOSSDK.h */,
+				D8EEF3BE1577924D003FEB5E /* Glob3iOSSDK.m */,
+				D8EEF3BB1577924D003FEB5E /* Supporting Files */,
+			);
+			name = G3MiOSSDK;
+			path = Glob3iOSSDK;
+			sourceTree = "<group>";
+		};
+		D8EEF3BB1577924D003FEB5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8EEF3BC1577924D003FEB5E /* G3MiOSSDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8EEF3F81577A629003FEB5E /* Specific */ = {
+			isa = PBXGroup;
+			children = (
+				D8EEF3FA1577A635003FEB5E /* Widget */,
+			);
+			name = Specific;
+			sourceTree = "<group>";
+		};
+		D8EEF3FA1577A635003FEB5E /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				D8EEF3FB1577A656003FEB5E /* ES1Renderer.h */,
+				D8EEF3FC1577A656003FEB5E /* ES1Renderer.mm */,
+				D8EEF3FD1577A656003FEB5E /* ES2Renderer.h */,
+				D8EEF3FE1577A656003FEB5E /* ES2Renderer.mm */,
+				D8EEF3FF1577A656003FEB5E /* ESRenderer.h */,
+				D8EEF4001577A656003FEB5E /* Glob3.h */,
+				D8EEF4011577A656003FEB5E /* Glob3.mm */,
+			);
+			name = Widget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D8EEF3B31577924D003FEB5E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EEF3D31577979E003FEB5E /* G3Widget.h in Headers */,
+				D8EEF4021577A656003FEB5E /* ES1Renderer.h in Headers */,
+				D8EEF4041577A656003FEB5E /* ES2Renderer.h in Headers */,
+				D8EEF4061577A656003FEB5E /* ESRenderer.h in Headers */,
+				D8EEF4071577A656003FEB5E /* Glob3.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D8EEF3B41577924D003FEB5E /* G3MiOSSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8EEF3C21577924D003FEB5E /* Build configuration list for PBXNativeTarget "G3MiOSSDK" */;
+			buildPhases = (
+				D8EEF3B11577924D003FEB5E /* Sources */,
+				D8EEF3B21577924D003FEB5E /* Frameworks */,
+				D8EEF3B31577924D003FEB5E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = G3MiOSSDK;
+			productName = Glob3iOSSDK;
+			productReference = D8EEF3B51577924D003FEB5E /* libG3MiOSSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8EEF3AC1577924D003FEB5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = D8EEF3AF1577924D003FEB5E /* Build configuration list for PBXProject "G3MiOSSDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D8EEF3AA1577924D003FEB5E;
+			productRefGroup = D8EEF3B61577924D003FEB5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8EEF3B41577924D003FEB5E /* G3MiOSSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8EEF3B11577924D003FEB5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EEF3BF1577924D003FEB5E /* Glob3iOSSDK.m in Sources */,
+				D8EEF4031577A656003FEB5E /* ES1Renderer.mm in Sources */,
+				D8EEF4051577A656003FEB5E /* ES2Renderer.mm in Sources */,
+				D8EEF4081577A656003FEB5E /* Glob3.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D8EEF3C01577924D003FEB5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D8EEF3C11577924D003FEB5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D8EEF3C31577924D003FEB5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DSTROOT = /tmp/Glob3iOSSDK.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Glob3iOSSDK/G3MiOSSDK-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = G3MiOSSDK;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D8EEF3C41577924D003FEB5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				DSTROOT = /tmp/Glob3iOSSDK.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Glob3iOSSDK/G3MiOSSDK-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = G3MiOSSDK;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8EEF3AF1577924D003FEB5E /* Build configuration list for PBXProject "G3MiOSSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8EEF3C01577924D003FEB5E /* Debug */,
+				D8EEF3C11577924D003FEB5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8EEF3C21577924D003FEB5E /* Build configuration list for PBXNativeTarget "G3MiOSSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8EEF3C31577924D003FEB5E /* Debug */,
+				D8EEF3C41577924D003FEB5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8EEF3AC1577924D003FEB5E /* Project object */;
+}
