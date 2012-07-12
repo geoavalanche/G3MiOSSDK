@@ -173,7 +173,7 @@
     comp->addRenderer(cameraRenderer);
     
     // very basic tile renderer
-    if (true) {
+    if (false) {
       TileTessellator* tessellator = new EllipsoidalTileTessellator("world.jpg");
       TileTexturizer* texturizer = new SimpleTileTexturizer();
       
@@ -187,7 +187,7 @@
       comp->addRenderer(dum);
     }
     
-    if (false) {
+    if (true) {
       // simple planet renderer, with a basic world image
       SimplePlanetRenderer* spr = new SimplePlanetRenderer("world.jpg");
       comp->addRenderer(spr);
