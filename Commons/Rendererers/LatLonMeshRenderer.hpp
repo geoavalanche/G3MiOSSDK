@@ -16,15 +16,14 @@
 class LatLonMeshRenderer: public Renderer {
   
 private:
-  Mesh *mesh;
+  Mesh * _mesh;
   
- 
 public:
   ~LatLonMeshRenderer();
   
   void initialize(const InitializationContext* ic);  
   
-  int render(const RenderContext* rc);
+  void render(const RenderContext* rc);
   
   bool onTouchEvent(const EventContext* ec,
                     const TouchEvent* touchEvent) {
@@ -37,7 +36,7 @@ public:
   bool isReadyToRender(const RenderContext* rc) {
     return true;
   }
-
+  
   void start() {
     
   }
@@ -45,7 +44,7 @@ public:
   void stop() {
     
   }
-
+  
 };
 
 #endif
