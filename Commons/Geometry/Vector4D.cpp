@@ -1,21 +1,25 @@
 //
-//  MutableVector2D.cpp
+//  Vector4D.cpp
 //  G3MiOSSDK
 //
-//  Created by Diego Gomez Deck on 31/05/12.
-//  Copyright (c) 2012 IGO Software SL. All rights reserved.
+//  Created by Diego Gomez Deck on 10/6/12.
+//
 //
 
-#include "MutableVector2D.hpp"
+#include "Vector4D.hpp"
 
 #include "IStringBuilder.hpp"
 
-const std::string MutableVector2D::description() const {
+const std::string Vector4D::description() const {
   IStringBuilder *isb = IStringBuilder::newStringBuilder();
-  isb->addString("(MV2D ");
+  isb->addString("(V4D ");
   isb->addDouble(_x);
   isb->addString(", ");
   isb->addDouble(_y);
+  isb->addString(", ");
+  isb->addDouble(_z);
+  isb->addString(", ");
+  isb->addDouble(_w);
   isb->addString(")");
   const std::string s = isb->getString();
   delete isb;
