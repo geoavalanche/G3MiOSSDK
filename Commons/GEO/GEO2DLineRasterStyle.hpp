@@ -1,18 +1,18 @@
 //
-//  GEOLine2DRasterStyle.hpp
+//  GEO2DLineRasterStyle.hpp
 //  G3MiOSSDK
 //
 //  Created by Diego Gomez Deck on 7/22/13.
 //
 //
 
-#ifndef __G3MiOSSDK__GEOLine2DRasterStyle__
-#define __G3MiOSSDK__GEOLine2DRasterStyle__
+#ifndef __G3MiOSSDK__GEO2DLineRasterStyle__
+#define __G3MiOSSDK__GEO2DLineRasterStyle__
 
 #include "Color.hpp"
 #include "ICanvas.hpp"
 
-class GEOLine2DRasterStyle {
+class GEO2DLineRasterStyle {
 private:
   const Color      _color;
   const float      _width;
@@ -30,7 +30,7 @@ private:
   const int        _dashPhase;
 
 public:
-  GEOLine2DRasterStyle(const Color&     color,
+  GEO2DLineRasterStyle(const Color&     color,
                        const float      width,
                        const StrokeCap  cap,
                        const StrokeJoin join,
@@ -49,7 +49,7 @@ public:
   {
   }
 
-  GEOLine2DRasterStyle(const GEOLine2DRasterStyle& that) :
+  GEO2DLineRasterStyle(const GEO2DLineRasterStyle& that) :
   _color(that._color),
   _width(that._width),
   _cap(that._cap),
@@ -69,11 +69,11 @@ public:
 #endif
   }
 
-  virtual ~GEOLine2DRasterStyle() {
+  virtual ~GEO2DLineRasterStyle() {
 
   }
 
-  void apply(ICanvas* canvas) const;
+  bool apply(ICanvas* canvas) const;
 
 };
 
