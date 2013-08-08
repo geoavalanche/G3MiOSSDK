@@ -1,19 +1,19 @@
 //
-//  G3MCBuilder.hpp
+//  MapBooBuilder.hpp
 //  G3MiOSSDK
 //
 //  Created by Diego Gomez Deck on 5/25/13.
 //
 //
 
-#ifndef __G3MiOSSDK__G3MCBuilder__
-#define __G3MiOSSDK__G3MCBuilder__
+#ifndef __G3MiOSSDK__MapBooBuilder__
+#define __G3MiOSSDK__MapBooBuilder__
 
 #include <stddef.h>
 
 class GL;
 class G3MWidget;
-class TileRenderer;
+class PlanetRenderer;
 class IStorage;
 class IDownloader;
 class IThreadUtils;
@@ -25,7 +25,7 @@ class GInitializationTask;
 class PeriodicalTask;
 class Layer;
 class LayerSet;
-class G3MCSceneDescription;
+class MapBooSceneDescription;
 class Color;
 class GPUProgramManager;
 class JSONBaseObject;
@@ -45,16 +45,16 @@ class IWebSocket;
 #include <string>
 
 
-class G3MCSceneChangeListener {
+class MapBooSceneChangeListener {
 public:
-  virtual ~G3MCSceneChangeListener() {
+  virtual ~MapBooSceneChangeListener() {
 
   }
 
   virtual void onSceneChanged(const std::string& sceneId) = 0;
 
   virtual void onBaseLayerChanged(Layer* baseLayer) = 0;
-  
+
   virtual void onOverlayLayerChanged(Layer* overlayLayer) = 0;
 
   virtual void onUserChanged(const std::string& user) = 0;
@@ -64,24 +64,24 @@ public:
   virtual void onDescriptionChanged(const std::string& description) = 0;
 
   virtual void onBackgroundColorChanged(const Color& backgroundColor) = 0;
-  
+
 };
 
 
-class G3MCBuilderScenesDescriptionsListener {
+class MapBooBuilderScenesDescriptionsListener {
 public:
-  virtual ~G3MCBuilderScenesDescriptionsListener() {
+  virtual ~MapBooBuilderScenesDescriptionsListener() {
 
   }
 
-  virtual void onDownload(std::vector<G3MCSceneDescription*>* scenesDescriptions) = 0;
+  virtual void onDownload(std::vector<MapBooSceneDescription*>* scenesDescriptions) = 0;
 
   virtual void onError() = 0;
-  
+
 };
 
 
-class G3MCBuilder {
+class MapBooBuilder {
 private:
 
 #ifdef C_CODE
@@ -95,7 +95,7 @@ private:
 
   const bool _useWebSockets;
 
-  G3MCSceneChangeListener* _sceneListener;
+  MapBooSceneChangeListener* _sceneListener;
 
   std::string _sceneId;
   int         _sceneTimestamp;
@@ -115,10 +115,10 @@ private:
   bool        _isSceneTubeOpen;
 
   LayerSet* _layerSet;
-  TileRenderer* createTileRenderer();
+  PlanetRenderer* createPlanetRenderer();
 
   std::vector<ICameraConstrainer*>* createCameraConstraints();
-  
+
   CameraRenderer* createCameraRenderer();
 
   Renderer* createBusyRenderer();
@@ -134,7 +134,7 @@ private:
 
   IDownloader* _downloader;
   IDownloader* getDownloader();
-  
+
   GPUProgramManager* _gpuProgramManager;
   GPUProgramManager* getGPUProgramManager();
 
@@ -147,7 +147,7 @@ private:
 
 
   Layer* parseLayer(const JSONBaseObject* jsonBaseObjectLayer) const;
-  
+
   MapQuestLayer* parseMapQuestLayer(const JSONObject* jsonBaseLayer,
                                     const TimeInterval& timeToCache) const;
 
@@ -166,13 +166,13 @@ private:
   WMSLayer* parseWMSLayer(const JSONObject* jsonBaseLayer) const;
 
 protected:
-  G3MCBuilder(const URL& serverURL,
-              const URL& tubesURL,
-              bool useWebSockets,
-              const std::string& sceneId,
-              G3MCSceneChangeListener* sceneListener);
-  
-  virtual ~G3MCBuilder() {
+  MapBooBuilder(const URL& serverURL,
+                const URL& tubesURL,
+                bool useWebSockets,
+                const std::string& sceneId,
+                MapBooSceneChangeListener* sceneListener);
+
+  virtual ~MapBooBuilder() {
   }
 
   void setGL(GL *gl);
@@ -190,9 +190,9 @@ protected:
   virtual IDownloader* createDownloader() = 0;
 
   virtual IThreadUtils* createThreadUtils() = 0;
-  
+
   virtual GPUProgramManager* createGPUProgramManager() = 0;
-  
+
 public:
   /** Private to G3M, don't call it */
   int getSceneTimestamp() const;
@@ -202,7 +202,7 @@ public:
 
   /** Private to G3M, don't call it */
   void setSceneBaseLayer(Layer* baseLayer);
-  
+
   /** Private to G3M, don't call it */
   void setSceneOverlayLayer(Layer* overlayLayer);
 
@@ -228,7 +228,7 @@ public:
   void rawChangeScene(const std::string& sceneId);
 
   /** Private to G3M, don't call it */
-  void requestScenesDescriptions(G3MCBuilderScenesDescriptionsListener* listener,
+  void requestScenesDescriptions(MapBooBuilderScenesDescriptionsListener* listener,
                                  bool autoDelete = true);
 
   /** Private to G3M, don't call it */
@@ -239,11 +239,11 @@ public:
   void openSceneTube(const G3MContext* context);
 
   void setSceneTubeOpened(bool open);
-
+  
   bool isSceneTubeOpen() const {
     return _isSceneTubeOpen;
   }
-
+  
   void changeScene(const std::string& sceneId);
 };
 

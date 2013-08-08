@@ -1,13 +1,13 @@
 //
-//  TileRenderer.h
+//  PlanetRenderer.h
 //  G3MiOSSDK
 //
 //  Created by Agustin Trujillo Pino on 12/06/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#ifndef G3MiOSSDK_TileRenderer_h
-#define G3MiOSSDK_TileRenderer_h
+#ifndef G3MiOSSDK_PlanetRenderer_h
+#define G3MiOSSDK_PlanetRenderer_h
 
 class Tile;
 class TileTessellator;
@@ -26,12 +26,13 @@ class LayerTilesRenderParameters;
 #include "Camera.hpp"
 #include "LayerSet.hpp"
 #include "ChangedListener.hpp"
+#include "SurfaceElevationProvider.hpp"
 
 class EllipsoidShape;
 
 class TileRasterizer;
 
-class TileRenderContext {
+class PlanetRendererContext {
 private:
   const TileTessellator*       _tessellator;
   ElevationDataProvider*       _elevationDataProvider;
@@ -48,20 +49,20 @@ private:
 
 
   ITimer* _lastSplitTimer; // timer to start every time a tile get splitted into subtiles
-  
+
   long long _texturePriority;
 public:
-  TileRenderContext(const TileTessellator*       tessellator,
-                    ElevationDataProvider*       elevationDataProvider,
-                    TileTexturizer*              texturizer,
-                    TileRasterizer*              tileRasterizer,
-                    const LayerSet*              layerSet,
-                    const TilesRenderParameters* parameters,
-                    TilesStatistics*             statistics,
-                    ITimer*                      lastSplitTimer,
-                    bool                         isForcedFullRender,
-                    long long                    texturePriority,
-                    const float                  verticalExaggeration) :
+  PlanetRendererContext(const TileTessellator*       tessellator,
+                        ElevationDataProvider*       elevationDataProvider,
+                        TileTexturizer*              texturizer,
+                        TileRasterizer*              tileRasterizer,
+                        const LayerSet*              layerSet,
+                        const TilesRenderParameters* parameters,
+                        TilesStatistics*             statistics,
+                        ITimer*                      lastSplitTimer,
+                        bool                         isForcedFullRender,
+                        long long                    texturePriority,
+                        const float                  verticalExaggeration) :
   _tessellator(tessellator),
   _elevationDataProvider(elevationDataProvider),
   _texturizer(texturizer),
@@ -116,7 +117,7 @@ public:
   bool isForcedFullRender() const {
     return _isForcedFullRender;
   }
-  
+
   long long getTexturePriority() const {
     return _texturePriority;
   }
@@ -223,7 +224,7 @@ public:
     }
   }
 
-  void computeTileRendered(Tile* tile) {
+  void computePlanetRenderered(Tile* tile) {
     _tilesRendered++;
 
     const int level = tile->getLevel();
@@ -261,7 +262,7 @@ public:
     for(int i = 0; i < nMax; i++) {
       const int level   = i;
       const int counter = m[i];
-      if (counter != 0){
+      if (counter != 0) {
         if (first) {
           first = false;
         }
@@ -290,7 +291,7 @@ public:
 };
 
 
-class TileRenderer: public LeafRenderer, ChangedListener {
+class PlanetRenderer: public LeafRenderer, ChangedListener, SurfaceElevationProvider {
 private:
   const TileTessellator*       _tessellator;
   ElevationDataProvider*       _elevationDataProvider;
@@ -331,17 +332,14 @@ private:
   Sector* _lastVisibleSector;
 
   std::vector<VisibleSectorListenerEntry*> _visibleSectorListeners;
-  
+
   long long _texturePriority;
 
   float _verticalExaggeration;
 
 
   bool isReadyToRenderTiles(const G3MRenderContext* rc);
-  void renderIncompletePlanet(const G3MRenderContext* rc);
 
-  EllipsoidShape* _incompleteShape;
-  
   bool _recreateTilesPending;
 
   GLState _glState;
@@ -349,19 +347,18 @@ private:
   ModelGLFeature*      _model;
   void updateGLState(const G3MRenderContext* rc);
 
-
 public:
-  TileRenderer(const TileTessellator* tessellator,
-               ElevationDataProvider* elevationDataProvider,
-               float verticalExaggeration,
-               TileTexturizer*  texturizer,
-               TileRasterizer*  tileRasterizer,
-               LayerSet* layerSet,
-               const TilesRenderParameters* parameters,
-               bool showStatistics,
-               long long texturePriority);
+  PlanetRenderer(const TileTessellator* tessellator,
+                 ElevationDataProvider* elevationDataProvider,
+                 float verticalExaggeration,
+                 TileTexturizer*  texturizer,
+                 TileRasterizer*  tileRasterizer,
+                 LayerSet* layerSet,
+                 const TilesRenderParameters* parameters,
+                 bool showStatistics,
+                 long long texturePriority);
 
-  ~TileRenderer();
+  ~PlanetRenderer();
 
   void initialize(const G3MContext* context);
 
@@ -438,7 +435,7 @@ public:
   void addVisibleSectorListener(VisibleSectorListener* listener) {
     addVisibleSectorListener(listener, TimeInterval::zero());
   }
-  
+
   /**
    * Set the download-priority used by Tiles (for downloading textures).
    *
@@ -447,7 +444,7 @@ public:
   void setTexturePriority(long long texturePriority) {
     _texturePriority = texturePriority;
   }
-  
+
   /**
    * Return the current value for the download priority of textures
    *
@@ -456,13 +453,27 @@ public:
   long long getTexturePriority() const {
     return _texturePriority;
   }
-  
+
   /**
-   * @see Renderer#isTileRenderer()
+   * @see Renderer#isPlanetRenderer()
    */
-  bool isTileRenderer() {
+  bool isPlanetRenderer() {
     return true;
   }
+
+  SurfaceElevationProvider* getSurfaceElevationProvider() {
+    return (_elevationDataProvider == NULL) ? NULL : this;
+  }
+
+  void addListener(const Angle& latitude,
+                   const Angle& longitude,
+                   SurfaceElevationListener* observer);
+
+  void addListener(const Geodetic2D& position,
+                   SurfaceElevationListener* observer);
+
+  void removeListener(SurfaceElevationListener* observer);
+
 };
 
 
