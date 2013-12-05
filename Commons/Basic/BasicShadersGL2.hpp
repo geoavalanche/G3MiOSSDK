@@ -289,7 +289,7 @@ public:
 "uniform mat4 uModel; \n " + 
 "uniform float uPointSize; \n " + 
 "varying vec2 TextureCoordOut; \n " + 
-"uniform vec3 uDiffuseLightDirection; //MUST BE NORMALIZED \n " + 
+"uniform vec3 uDiffuseLightDirection; //MUST BE NORMALIZED IN SHADER \n " + 
 "varying float diffuseLightIntensity; \n " + 
 "uniform vec3 uAmbientLightColor; \n " + 
 "uniform vec3 uDiffuseLightColor; \n " + 
